@@ -8,7 +8,7 @@ const Background = () => {
       style={{ backgroundColor: color.backgroundColor }}
     >
       <h1 className="text-5xl mb-5" style={{ color: color.textColor }}>
-        Background Color Testing
+        Background & Text Color Testing
       </h1>
       <div className="flex gap-5">
         <input
