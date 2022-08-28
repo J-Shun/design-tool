@@ -10,24 +10,26 @@ const Background = () => {
       <h1 className="text-5xl mb-5" style={{ color: color.textColor }}>
         Background Color Testing
       </h1>
-      <input
-        type="color"
-        onInput={(e) => {
-          setColor({
-            ...color,
-            backgroundColor: e.target.value,
-          });
-        }}
-      />
-      <input
-        type="color"
-        onInput={(e) => {
-          setColor({
-            ...color,
-            textColor: e.target.value,
-          });
-        }}
-      />
+      <div className="flex gap-5">
+        <input
+          type="color"
+          onInput={(e) => {
+            setColor({
+              ...color,
+              backgroundColor: e.target.value,
+            });
+          }}
+        />
+        <input
+          type="color"
+          onInput={(e) => {
+            setColor({
+              ...color,
+              textColor: e.target.value,
+            });
+          }}
+        />
+      </div>
     </div>
   );
 };
