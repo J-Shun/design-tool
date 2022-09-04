@@ -31,7 +31,7 @@ const SideMenu = () => {
         </li>
         <li>
           <Link to={"/keyname"} className="flex items-center cursor-pointer">
-            <ImKeyboard className="mr-3" /> Key Name
+            <ImKeyboard className="mr-3" /> Key Name (PC ONLY)
           </Link>
         </li>
         <li>
