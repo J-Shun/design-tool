@@ -6,7 +6,7 @@ const colorSet = {
   default: { name: "Default", bg: "#FFFFFF", text: "#000000" },
   asuka: { name: "Asuka", bg: "#F89BB2", text: "#FFFFFF" },
   misaki: { name: "Misaki", bg: "#484143", text: "#F6F958" },
-  mashiro: { name: "Mashiro", bg: "#FFF8BD", text: "#7C50A5" },
+  mashiro: { name: "Mashiro", bg: "#FFF8BD", text: "#D4BE9C" },
   rika: { name: "Rika", bg: "#F3BACD", text: "#995092" },
   shindou: { name: "Shindou", bg: "#B3BFFF", text: "#964CE1" },
 };
@@ -38,7 +38,7 @@ const Background = () => {
 
   return (
     <div
-      className="h-screen flex flex-col justify-center items-center"
+      className="h-screen flex flex-col justify-center items-center ease-linear duration-300"
       style={{ backgroundColor: color.backgroundColor }}
     >
       <h2
@@ -73,7 +73,7 @@ const Background = () => {
             arrow="true"
           >
             <p
-              className="text-xl cursor-pointer"
+              className="text-xl cursor-pointer hover:opacity-60"
               style={{ color: color.textColor }}
               onClick={(e) => {
                 copyText(e);
@@ -107,7 +107,7 @@ const Background = () => {
             arrow="true"
           >
             <p
-              className="text-xl cursor-pointer"
+              className="text-xl cursor-pointer hover:opacity-60"
               style={{ color: color.textColor }}
               onClick={(e) => {
                 copyText(e);
