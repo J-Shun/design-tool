@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 
-const colorSet = {
-  default: { name: "Default", bg: "#FFFFFF", text: "#000000" },
-  asuka: { name: "Asuka", bg: "#F89BB2", text: "#FFFFFF" },
-  misaki: { name: "Misaki", bg: "#484143", text: "#F6F958" },
-  mashiro: { name: "Mashiro", bg: "#FFF8BD", text: "#D4BE9C" },
-  rika: { name: "Rika", bg: "#F3BACD", text: "#995092" },
-  shindou: { name: "Shindou", bg: "#B3BFFF", text: "#964CE1" },
-};
+const colorSet = [
+  { name: "Default", bg: "#FFFFFF", text: "#000000" },
+  { name: "Asuka", bg: "#F89BB2", text: "#FFFFFF" },
+  { name: "Misaki", bg: "#484143", text: "#F6F958" },
+  { name: "Mashiro", bg: "#FFF8BD", text: "#D4BE9C" },
+  { name: "Rika", bg: "#F3BACD", text: "#995092" },
+  { name: "Shindou", bg: "#B3BFFF", text: "#964CE1" },
+];
 
 const Background = () => {
   const [color, setColor] = useState({
@@ -45,7 +45,7 @@ const Background = () => {
         className="text-5xl text-center mb-10"
         style={{ color: color.textColor }}
       >
-        Background & Text Color Matching
+        Color Matching
       </h2>
       <div className="flex justify-between w-52 mb-10">
         <div className="flex flex-col items-center w-20">
@@ -119,122 +119,35 @@ const Background = () => {
         </div>
       </div>
 
-      <div className="flex gap-4">
-        <div
-          className="flex flex-col justify-center items-center cursor-pointer"
-          data-bg={colorSet.default.bg}
-          data-text={colorSet.default.text}
-          onClick={(e) => renderColor(e)}
-        >
-          <div
-            className="flex justify-center items-center w-8 h-8 bg-white rounded-full mb-2 pointer-events-none"
-            style={{ backgroundColor: colorSet.default.bg }}
-          >
-            <div
-              className="w-5 h-5 bg-black rounded-full pointer-events-none"
-              style={{ backgroundColor: colorSet.default.text }}
-            ></div>
-          </div>
-          <p className="pointer-events-none" style={{ color: color.textColor }}>
-            {colorSet.default.name}
-          </p>
-        </div>
-        <div
-          className="flex flex-col justify-center items-center cursor-pointer"
-          data-bg={colorSet.asuka.bg}
-          data-text={colorSet.asuka.text}
-          onClick={(e) => renderColor(e)}
-        >
-          <div
-            className="flex justify-center items-center w-8 h-8 bg-white rounded-full mb-2 pointer-events-none"
-            style={{ backgroundColor: colorSet.asuka.bg }}
-          >
-            <div
-              className="w-5 h-5 bg-black rounded-full pointer-events-none"
-              style={{ backgroundColor: colorSet.asuka.text }}
-            ></div>
-          </div>
-          <p className="pointer-events-none" style={{ color: color.textColor }}>
-            {colorSet.asuka.name}
-          </p>
-        </div>
-        <div
-          className="flex flex-col justify-center items-center cursor-pointer"
-          data-bg={colorSet.misaki.bg}
-          data-text={colorSet.misaki.text}
-          onClick={(e) => renderColor(e)}
-        >
-          <div
-            className="flex justify-center items-center w-8 h-8 bg-white rounded-full mb-2 pointer-events-none"
-            style={{ backgroundColor: colorSet.misaki.bg }}
-          >
-            <div
-              className="w-5 h-5 bg-black rounded-full pointer-events-none"
-              style={{ backgroundColor: colorSet.misaki.text }}
-            ></div>
-          </div>
-          <p className="pointer-events-none" style={{ color: color.textColor }}>
-            {colorSet.misaki.name}
-          </p>
-        </div>
-        <div
-          className="flex flex-col justify-center items-center cursor-pointer"
-          data-bg={colorSet.mashiro.bg}
-          data-text={colorSet.mashiro.text}
-          onClick={(e) => renderColor(e)}
-        >
-          <div
-            className="flex justify-center items-center w-8 h-8 bg-white rounded-full mb-2 pointer-events-none"
-            style={{ backgroundColor: colorSet.mashiro.bg }}
-          >
-            <div
-              className="w-5 h-5 bg-black rounded-full pointer-events-none"
-              style={{ backgroundColor: colorSet.mashiro.text }}
-            ></div>
-          </div>
-          <p className="pointer-events-none" style={{ color: color.textColor }}>
-            {colorSet.mashiro.name}
-          </p>
-        </div>
-        <div
-          className="flex flex-col justify-center items-center cursor-pointer"
-          data-bg={colorSet.rika.bg}
-          data-text={colorSet.rika.text}
-          onClick={(e) => renderColor(e)}
-        >
-          <div
-            className="flex justify-center items-center w-8 h-8 bg-white rounded-full mb-2 pointer-events-none"
-            style={{ backgroundColor: colorSet.rika.bg }}
-          >
-            <div
-              className="w-5 h-5 bg-black rounded-full pointer-events-none"
-              style={{ backgroundColor: colorSet.rika.text }}
-            ></div>
-          </div>
-          <p className="pointer-events-none" style={{ color: color.textColor }}>
-            {colorSet.rika.name}
-          </p>
-        </div>
-        <div
-          className="flex flex-col justify-center items-center cursor-pointer"
-          data-bg={colorSet.shindou.bg}
-          data-text={colorSet.shindou.text}
-          onClick={(e) => renderColor(e)}
-        >
-          <div
-            className="flex justify-center items-center w-8 h-8 bg-black rounded-full mb-2 pointer-events-none"
-            style={{ backgroundColor: colorSet.shindou.bg }}
-          >
-            <div
-              className="w-5 h-5 bg-white rounded-full pointer-events-none"
-              style={{ backgroundColor: colorSet.shindou.text }}
-            ></div>
-          </div>
-          <p className="pointer-events-none" style={{ color: color.textColor }}>
-            {colorSet.shindou.name}
-          </p>
-        </div>
-      </div>
+      <ol className="flex gap-4">
+        {colorSet.map((set) => {
+          return (
+            <li
+              className="flex flex-col justify-center items-center cursor-pointer"
+              data-bg={set.bg}
+              data-text={set.text}
+              onClick={(e) => renderColor(e)}
+              key={set.name}
+            >
+              <div
+                className="flex justify-center items-center w-8 h-8 bg-white rounded-full mb-2 pointer-events-none"
+                style={{ backgroundColor: set.bg }}
+              >
+                <div
+                  className="w-5 h-5 bg-black rounded-full pointer-events-none"
+                  style={{ backgroundColor: set.text }}
+                ></div>
+              </div>
+              <p
+                className="pointer-events-none"
+                style={{ color: color.textColor }}
+              >
+                {set.name}
+              </p>
+            </li>
+          );
+        })}
+      </ol>
     </div>
   );
 };

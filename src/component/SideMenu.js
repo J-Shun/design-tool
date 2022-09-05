@@ -17,10 +17,12 @@ const SideMenu = () => {
         setIsOpen(false);
       }}
     >
-      <h2 className="text-center text-2xl mb-8">Design Tool</h2>
+      <Link to={"/"} className="block text-center text-2xl mb-8">
+        Design Tool
+      </Link>
       <ul className="flex flex-col gap-4">
         <li>
-          <Link to={"/"} className="flex items-center cursor-pointer">
+          <Link to={"/background"} className="flex items-center cursor-pointer">
             <CgScreen className="mr-3" /> Background
           </Link>
         </li>

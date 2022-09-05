@@ -1,3 +1,4 @@
+import Home from "./component/Home";
 import SideMenu from "./component/SideMenu";
 import Background from "./component/Background";
 import Button from "./component/Button";
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <SideMenu />
         <Routes>
-          <Route path="/" element={<Background />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/background" element={<Background />} />
           <Route path="/button" element={<Button />} />
           <Route path="/keyname" element={<KeyName />} />
           <Route path="/pixelcanvas" element={<PixelCanvas />} />
